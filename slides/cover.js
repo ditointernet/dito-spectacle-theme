@@ -19,6 +19,11 @@ const variants = {
     suffixColor: COLORS.NEW.GREEN_500
   },
   3: {
+    bgColor: COLORS.NEW.GRAY_50,
+    textColor: COLORS.NEW.DARK_900,
+    suffixColor: COLORS.NEW.GREEN_500
+  },
+  4: {
     bgColor: COLORS.NEW.DARK_900,
     textColor: COLORS.NEW.WHITE,
     suffixColor: COLORS.NEW.GREEN_500
@@ -34,9 +39,9 @@ const Cover = ({ variant, bgSrc, title, subtitle, titleSuffix, ...props }) => {
     <SpectacleSlide
       {...props}
       bgColor={variantProps.bgColor}
-      {...(variant === 3 ? { bgGradient: imageGradient } : {})}
+      {...(variant === 4 ? { bgGradient: imageGradient } : {})}
     >
-      {variant === 3 && (
+      {variant === 4 && (
         <div
           className="slider-cover-logo"
           style={{ position: "absolute", top: "10vh" }}
@@ -45,7 +50,12 @@ const Cover = ({ variant, bgSrc, title, subtitle, titleSuffix, ...props }) => {
           <Bar width="2vw" height="0.6vh" margin="2vh 0 0" />
         </div>
       )}
-      <Heading caps size={6} fontWeight={500} textColor={COLORS.NEW.WHITE}>
+      <Heading
+        caps
+        size={6}
+        fontWeight={500}
+        textColor={variantProps.textColor}
+      >
         {subtitle}
       </Heading>
       <Heading
