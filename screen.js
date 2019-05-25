@@ -1,243 +1,161 @@
-import colors from "./colors";
+import COLORS from "./colors";
 
-const screen = () => {
-  const fonts = {
-    body: `Montserrat, sans-serif`,
-    header: `Montserrat, sans-serif`,
-    code: `'Fira Mono', monospace`
+const screen = (colorArgs = {}, fontArgs = {}) => {
+  const colors = Object.assign({}, colorArgs, COLORS);
+  let normalizedFontArgs = {};
+  let googleFonts = {};
+
+  Object.keys(fontArgs).forEach(key => {
+    const value = fontArgs[key];
+    const fontName = value.hasOwnProperty("name") ? value.name : value;
+
+    normalizedFontArgs = { ...normalizedFontArgs, [key]: fontName };
+
+    if (value.hasOwnProperty("googleFont") && value.googleFont) {
+      googleFonts = { ...googleFonts, [key]: value };
+    }
+  });
+
+  const fonts = normalizedFontArgs;
+
+  const headingDefaults = {
+    color: colors.NEW.DARK_900,
+    fontFamily: fonts.primary,
+    fontWeight: 700,
+    lineHeight: 1,
+    margin: 0
   };
 
-  // Base Style for all Headers
-  const header = style =>
-    Object.assign(
-      {},
-      {
-        fontFamily: fonts.header,
-        fontWeight: 700,
-        color: colors.heading,
-        lineHeight: 1,
-        margin: "0 auto 2rem"
-      },
-      style
-    );
-
-  const theme = {
-    colors: Object.assign({}, colors),
+  return {
+    colors,
     fonts,
-
-    // Global CSS
-    // ---------------
+    googleFonts,
     global: {
       body: {
-        background: colors.background,
-        color: colors.text,
-        fontFamily: fonts.body,
-        fontSize: "100%",
+        color: colors.NEW.DARK_900,
+        background: colors.NEW.WHITE,
+        fontFamily: fonts.primary,
+        fontWeight: 600,
+        fontSize: "62.5%",
         overflow: "hidden"
       },
-      "html, body": {
-        height: "100%"
-      },
-      "*": {
-        boxSizing: "border-box"
-      }
+      "_:-moz-tree-row(hover), .spectacle-deck": { perspective: "1000px" },
+      "_:-moz-tree-row(hover), ul .appear": { display: "inline" },
+      "html, body": { width: "100%", height: "100%", margin: 0, padding: 0 },
+      "*": { boxSizing: "border-box" }
     },
-
-    // Presentation Components
-    // ---------------
-    components: {
-      blockquote: {
-        display: "inline-block",
-        textAlign: "left",
-        position: "relative",
-        margin: 0,
-        padding: "1.2rem 0 1.2rem 2rem",
-        borderLeft: `6px double ${colors.highlight}`
-      },
-      quote: {
-        display: "block",
-        fontSize: "4rem",
-        fontWeight: "bold",
-        lineHeight: 1.1
-      },
-      cite: {
-        display: "block",
-        marginTop: "2.5rem",
-        fontSize: "1.5rem",
-        opacity: 0.6
-      },
-      content: {
-        margin: "0 auto",
-        textAlign: "center"
-      },
-      heading: {
-        h1: header({
-          fontSize: "7rem"
-        }),
-        h2: header({
-          fontSize: "5rem"
-        }),
-        h3: header({
-          fontSize: "3rem",
-          color: colors.text
-        }),
-        h4: header({
-          fontSize: "2rem",
-          color: colors.text
-        }),
-        link: {
-          textDecoration: "none"
-        }
-      },
-      text: {
-        fontSize: "1.75rem",
-        margin: "0 auto 0.5rem"
-      },
-      s: {
-        strikethrough: {}
-      },
-      link: {
-        display: "inline-block",
-        color: colors.text,
-        textDecoration: "none",
-        marginBottom: "-2px",
-        borderBottom: `2px solid rgba(57,200,129,0.3)`,
-        ":hover": {
-          color: colors.heading
-        }
-      },
-      listItem: {
-        fontSize: "2rem",
-        padding: "0.25em 0"
-      },
-      list: {
-        textAlign: "left",
-        padding: "0 0 0 3rem"
-      },
-      tableHeaderItem: {
-        fontSize: "2.25rem",
-        fontWeight: "bold",
-        border: `2px solid #556873`,
-        padding: "0.5rem 0"
-      },
-      tableItem: {
-        fontSize: "1.5rem",
-        border: `2px solid #556873`,
-        padding: "1rem 0.5rem"
-      },
-      table: {
-        width: "100%",
-        borderCollapse: "collapse"
-      },
-      image: {
-        display: "block",
-        margin: "0.5rem auto"
-      },
-      code: {
-        display: "inline-block",
-        color: "#C5D4DD",
-        fontFamily: fonts.code,
-        fontSize: "90%",
-        lineHeight: 1,
-        background: "#556873",
-        padding: "6px 5px 3px",
-        borderRadius: "2px"
-      },
-      codePane: {
-        pre: {},
-        code: {}
-      }
-    },
-
-    // Controls (-> none)
-    // ---------------
-    controls: {
-      prev: {
-        display: "none"
-      },
-      next: {
-        display: "none"
-      }
-    },
-
-    // Progress
-    // ---------------
     progress: {
-      pacman: {
-        container: {
-          position: "absolute",
-          bottom: "5px",
-          left: "50%",
-          transition: "all 1s ease-in-out 0.2s",
-          zIndex: 1000
-        },
-        pacman: {
-          position: "absolute",
-          transition: "left 0.3s ease-in-out 0.2s",
-          width: "20px",
-          height: "20px",
-          transform: "translate(-5px, -5px)"
-        },
-        pacmanTop: {
-          position: "absolute",
-          content: "",
-          width: "20px",
-          height: "10px",
-          borderTopLeftRadius: "10px",
-          borderTopRightRadius: "10px",
-          background: colors.highlight
-        },
-        pacmanBottom: {
-          position: "absolute",
-          content: "",
-          width: "20px",
-          height: "10px",
-          borderBottomLeftRadius: "10px",
-          borderBottomRightRadius: "10px",
-          background: colors.highlight,
-          top: "10px"
-        },
-        point: {
-          position: "absolute",
-          float: "left",
-          background: "transparent",
-          width: "10px",
-          height: "10px",
-          borderWidth: 2,
-          borderStyle: "solid",
-          borderColor: colors.heading,
-          borderRadius: "50%",
-          transition: "all 0.01s ease-out 0.4s"
-        }
-      },
       bar: {
         container: {
           position: "absolute",
-          height: "6px",
-          width: "100%",
-          bottom: 0,
-          left: 0,
-          transition: "all .8s ease-in-out 0.2s",
-          zIndex: 1000
+          height: "1vh",
+          width: "calc(100% - 4vh)",
+          bottom: "1.5vh",
+          left: "2vh",
+          right: "2vh",
+          zIndex: 1000,
+          transition: "all 1s ease-in-out 0.2s"
         },
         bar: {
           height: "100%",
-          background: colors.heading,
+          borderRadius: "10vh",
+          background: colors.quaternary,
           transition: "all 0.3s ease-out"
         }
+      }
+    },
+    components: {
+      blockquote: {
+        textAlign: "left",
+        position: "relative",
+        display: "inline-block",
+        margin: 20
       },
-      number: {
-        container: {
-          position: "absolute",
-          bottom: 10,
-          right: 10,
-          zIndex: 1000,
-          color: colors.heading
+      quote: {
+        borderLeft: `1px solid ${colors.primary}`,
+        paddingLeft: 40,
+        display: "block",
+        color: colors.primary,
+        fontSize: "4.9rem",
+        lineHeight: 1,
+        fontWeight: "bold"
+      },
+      cite: {
+        color: colors.tertiary,
+        display: "block",
+        clear: "left",
+        fontSize: "2rem",
+        marginTop: "1rem"
+      },
+      content: {
+        margin: "0"
+      },
+      codePane: {
+        margin: 0,
+        fontSize: "0.8rem",
+        fontWeight: "normal",
+        minWidth: "100%",
+        maxWidth: 800
+      },
+      syntax: {
+        fontFamily: fonts.tertiary,
+        fontSize: "inherit",
+        lineHeight: 1.5,
+        direction: "ltr",
+        textAlign: "left",
+        wordSpacing: "normal",
+        wordBreak: "normal",
+        tabSize: 2,
+        hyphens: "none",
+        whiteSpace: "pre-wrap",
+        padding: "0.5rem",
+        margin: 0
+      },
+      code: {
+        color: "black",
+        fontSize: "2.66rem",
+        fontFamily: fonts.tertiary,
+        margin: 0,
+        backgroundColor: "rgba(0,0,0,0.15)",
+        padding: "0 10px",
+        borderRadius: 3
+      },
+      goToAction: {
+        borderRadius: "6px",
+        fontFamily: fonts.primary,
+        padding: "0.25em 1em",
+        border: "none",
+        background: "#000",
+        color: "#fff",
+        "&:hover": {
+          background: colors.tertiary,
+          color: "#000"
         }
+      },
+      image: { display: "block", margin: 0 },
+      link: { textDecoration: "none" },
+      listItem: { fontSize: "2.0rem" },
+      list: { textAlign: "left", listStylePosition: "inside", padding: 0 },
+      tableHeaderItem: { fontSize: "2.4rem", fontWeight: 800 },
+      tableItem: { fontSize: "2.0rem" },
+      table: { width: "100%" },
+      s: { strikethrough: {} },
+      heading: {
+        h1: { ...headingDefaults, fontSize: "9.6rem", fontWeight: 800 },
+        h2: { ...headingDefaults, fontSize: "8.0rem", fontWeight: 800 },
+        h3: { ...headingDefaults, fontSize: "6.4rem", fontWeight: 800 },
+        h4: { ...headingDefaults, fontSize: "4.8rem" },
+        h5: { ...headingDefaults, fontSize: "3.2rem" },
+        h6: { ...headingDefaults, fontSize: "1.6rem" }
+      },
+      text: {
+        color: colors.NEW.DARK_900,
+        fontSize: "2.0rem",
+        fontFamily: fonts.primary,
+        margin: 0
       }
     }
   };
-  return theme;
 };
 
 export default screen;
