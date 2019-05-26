@@ -19,7 +19,6 @@ const screen = (colorArgs = {}, fontArgs = {}) => {
   const fonts = normalizedFontArgs;
 
   const headingDefaults = {
-    color: colors.NEW.DARK_900,
     fontFamily: fonts.primary,
     fontWeight: 700,
     lineHeight: 1,
