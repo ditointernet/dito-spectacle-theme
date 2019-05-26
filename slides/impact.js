@@ -2,8 +2,7 @@ import React from "react";
 import { Slide as SpectacleSlide } from "spectacle";
 
 import COLORS from "../colors";
-import Bar from "../components/Bar";
-import Heading from "../components/Heading";
+import { Bar, Heading } from "../components";
 
 const variants = {
   1: {
@@ -40,7 +39,6 @@ const Impact = ({
   text,
   slideTitleSuffix,
   textSuffix,
-  children,
   ...props
 }) => {
   const variantProps = variants[variant || 1];
@@ -54,7 +52,7 @@ const Impact = ({
     >
       {variant === 4 && (
         <div
-          className="slide-impact-title"
+          className="slide-impact-breadcrumb"
           style={{ position: "absolute", top: "10vh", left: "10vw" }}
         >
           <Heading
@@ -94,7 +92,7 @@ const Impact = ({
         )}
         <Heading
           textSize={variant === 4 ? "3rem" : "4.2rem"}
-          boldTextSize="4.8rem"
+          boldTextSize={variant === 4 ? "3rem" : "4.8rem"}
           suffix={textSuffix}
           fontWeight={500}
           textColor={variantProps.textColor}
