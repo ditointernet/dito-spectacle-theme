@@ -94,7 +94,7 @@ const Impact = ({
           textSize={variant === 4 ? "3rem" : "4.2rem"}
           boldTextSize={variant === 4 ? "3rem" : "4.8rem"}
           suffix={textSuffix}
-          fontWeight={500}
+          fontWeight={variant === 4 ? 400 : 500}
           textColor={variantProps.textColor}
           suffixColor={variantProps.textSuffixColor}
         >

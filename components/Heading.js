@@ -8,13 +8,13 @@ const Heading = styled(SpectacleHeading)`
   font-weight: ${props => props.fontWeight + " !important"};
 
   &:after {
-    font-weight: 600;
+    font-weight: 700;
     color: ${props => props.suffixColor || COLORS.NEW.GREEN_500};
     content: '${prop("suffix", "")}';
   }
 
   strong {
-    font-weight: 800;
+    font-weight: 700;
     font-size: ${prop("boldTextSize", "inherit")};
   }
 `;
