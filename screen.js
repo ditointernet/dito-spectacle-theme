@@ -17,6 +17,12 @@ const screen = () => {
   return {
     colors: COLORS,
     fonts,
+    googleFonts: [
+      {
+        name: "Montserrat",
+        styles: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+      }
+    ],
     global: {
       body: {
         color: COLORS.NEW.DARK_900,
