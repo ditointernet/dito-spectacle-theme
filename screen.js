@@ -1,22 +1,11 @@
 import COLORS from "./colors";
 
-const screen = (colorArgs = {}, fontArgs = {}) => {
-  const colors = Object.assign({}, colorArgs, COLORS);
-  let normalizedFontArgs = {};
-  let googleFonts = {};
-
-  Object.keys(fontArgs).forEach(key => {
-    const value = fontArgs[key];
-    const fontName = value.hasOwnProperty("name") ? value.name : value;
-
-    normalizedFontArgs = { ...normalizedFontArgs, [key]: fontName };
-
-    if (value.hasOwnProperty("googleFont") && value.googleFont) {
-      googleFonts = { ...googleFonts, [key]: value };
-    }
-  });
-
-  const fonts = normalizedFontArgs;
+const screen = () => {
+  const fonts = {
+    primary: "Montserrat",
+    secondary: "Gilroy",
+    tertiary: "monospace"
+  };
 
   const headingDefaults = {
     fontFamily: fonts.primary,
@@ -26,13 +15,18 @@ const screen = (colorArgs = {}, fontArgs = {}) => {
   };
 
   return {
-    colors,
+    colors: COLORS,
     fonts,
-    googleFonts,
+    googleFonts: [
+      {
+        name: "Montserrat",
+        styles: ["100", "200", "300", "400", "500", "600", "700", "800", "900"]
+      }
+    ],
     global: {
       body: {
-        color: colors.NEW.DARK_900,
-        background: colors.NEW.WHITE,
+        color: COLORS.NEW.DARK_900,
+        background: COLORS.NEW.WHITE,
         fontFamily: fonts.primary,
         fontWeight: 600,
         fontSize: "62.5%",
@@ -58,7 +52,7 @@ const screen = (colorArgs = {}, fontArgs = {}) => {
         bar: {
           height: "100%",
           borderRadius: "10vh",
-          background: colors.quaternary,
+          background: "rgba(255, 255, 255, 0.25)",
           transition: "all 0.3s ease-out"
         }
       }
@@ -71,16 +65,16 @@ const screen = (colorArgs = {}, fontArgs = {}) => {
         margin: 20
       },
       quote: {
-        borderLeft: `1px solid ${colors.primary}`,
+        borderLeft: `1px solid ${COLORS.primary}`,
         paddingLeft: 40,
         display: "block",
-        color: colors.primary,
+        color: COLORS.primary,
         fontSize: "4.9rem",
         lineHeight: 1,
         fontWeight: "bold"
       },
       cite: {
-        color: colors.tertiary,
+        color: COLORS.tertiary,
         display: "block",
         clear: "left",
         fontSize: "2rem",
@@ -111,7 +105,7 @@ const screen = (colorArgs = {}, fontArgs = {}) => {
         margin: 0
       },
       code: {
-        color: "black",
+        color: COLORS.NEW.DARK_100,
         fontSize: "2.66rem",
         fontFamily: fonts.tertiary,
         margin: 0,
@@ -125,10 +119,10 @@ const screen = (colorArgs = {}, fontArgs = {}) => {
         padding: "0.25em 1em",
         border: "none",
         background: "#000",
-        color: "#fff",
+        color: COLORS.NEW.WHITE,
         "&:hover": {
-          background: colors.tertiary,
-          color: "#000"
+          background: COLORS.tertiary,
+          color: COLORS.NEW.DARK_900
         }
       },
       image: { display: "block", margin: 0 },
@@ -148,7 +142,7 @@ const screen = (colorArgs = {}, fontArgs = {}) => {
         h6: { ...headingDefaults, fontSize: "1.6rem" }
       },
       text: {
-        color: colors.NEW.DARK_900,
+        color: COLORS.NEW.DARK_900,
         fontSize: "2.0rem",
         fontFamily: fonts.primary,
         margin: 0

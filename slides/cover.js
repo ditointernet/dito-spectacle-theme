@@ -2,11 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Slide as SpectacleSlide } from "spectacle";
 
-import { ReactComponent as Logo } from "../logo.svg";
-
 import COLORS from "../colors";
-import Bar from "../components/Bar";
-import Heading from "../components/Heading";
+import { Bar, Heading } from "../components";
+
+import { ReactComponent as Logo } from "../logo.svg";
 
 const variants = {
   1: {
