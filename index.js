@@ -1,9 +1,10 @@
 import React from "react";
-import screen from "./screen";
-import print from "spectacle/lib/themes/default/print";
+import screen from "./theme";
 import { Deck as SpectacleDeck } from "spectacle";
 
-export const createTheme = () => ({ screen: screen(), print: print() });
+// @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+
+export const createTheme = () => ({ screen: screen(), print: screen() });
 
 export const Deck = ({ progress, ...props }) => (
   <SpectacleDeck
@@ -13,5 +14,6 @@ export const Deck = ({ progress, ...props }) => (
     controls={false}
     theme={createTheme()}
     transitionDuration={200}
+    contentWidth="1200px"
   />
 );

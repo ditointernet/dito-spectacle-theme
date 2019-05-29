@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Heading as SpectacleHeading } from "spectacle";
 
 import COLORS from "../colors";
-import { prop } from "../utils/functional";
 
 const Heading = styled(SpectacleHeading)`
   font-weight: ${props => props.fontWeight + " !important"};
@@ -10,12 +9,12 @@ const Heading = styled(SpectacleHeading)`
   &:after {
     font-weight: 700;
     color: ${props => props.suffixColor || COLORS.NEW.GREEN_500};
-    content: '${prop("suffix", "")}';
+    content: '${props => props.suffix || ""}';
   }
 
   strong {
     font-weight: 700;
-    font-size: ${prop("boldTextSize", "inherit")};
+    font-size: ${props => props.boldTextSize || "inherit"};
   }
 `;
 

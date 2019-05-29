@@ -49,11 +49,13 @@ const Impact = ({
       textSize={variantProps.textSize}
       textColor={variantProps.textColor}
       bgColor={variantProps.bgColor}
+      align="flex-start center"
+      padding="0 0 0 10vw"
     >
       {variant === 4 && (
         <div
           className="slide-impact-breadcrumb"
-          style={{ position: "absolute", top: "10vh", left: "10vw" }}
+          style={{ position: "absolute", top: "10vh" }}
         >
           <Heading
             caps
@@ -66,41 +68,27 @@ const Impact = ({
           <Bar width="3.6vw" height="0.6vh" margin="2vh 0 0" />
         </div>
       )}
-      <div
-        className="slide-impact-wrapper"
-        style={
-          variant === 4
-            ? {
-                position: "absolute",
-                left: "10vw",
-                top: "30vh",
-                maxWidth: "70vw"
-              }
-            : {}
-        }
-      >
-        {variant === 4 && (
-          <Heading
-            size={5}
-            margin="0 0 10vh"
-            suffix={slideTitleSuffix}
-            textColor={variantProps.textColor}
-            suffixColor={variantProps.slideTitleSuffixColor}
-          >
-            {slideTitle}
-          </Heading>
-        )}
+      {variant === 4 && (
         <Heading
-          textSize={variant === 4 ? "3rem" : "4.2rem"}
-          boldTextSize={variant === 4 ? "3rem" : "4.8rem"}
-          suffix={textSuffix}
-          fontWeight={variant === 4 ? 400 : 500}
+          size={5}
+          margin="0 0 10vh"
+          suffix={slideTitleSuffix}
           textColor={variantProps.textColor}
-          suffixColor={variantProps.textSuffixColor}
+          suffixColor={variantProps.slideTitleSuffixColor}
         >
-          {text}
+          {slideTitle}
         </Heading>
-      </div>
+      )}
+      <Heading
+        textSize={variant === 4 ? "3rem" : "4.2rem"}
+        boldTextSize={variant === 4 ? "3rem" : "4.8rem"}
+        suffix={textSuffix}
+        fontWeight={variant === 4 ? 400 : 500}
+        textColor={variantProps.textColor}
+        suffixColor={variantProps.textSuffixColor}
+      >
+        {text}
+      </Heading>
     </SpectacleSlide>
   );
 };
