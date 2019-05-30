@@ -8,24 +8,24 @@ import { ReactComponent as Logo } from "../logo.svg";
 
 const variants = {
   1: {
-    bgColor: COLORS.NEW.DARK_900,
-    textColor: COLORS.NEW.WHITE,
-    suffixColor: COLORS.NEW.GREEN_500
+    bgColor: COLORS.DARK_900,
+    textColor: COLORS.WHITE,
+    suffixColor: COLORS.GREEN_500
   },
   2: {
-    bgColor: COLORS.NEW.NAVY_700,
-    textColor: COLORS.NEW.WHITE,
-    suffixColor: COLORS.NEW.GREEN_500
+    bgColor: COLORS.NAVY_700,
+    textColor: COLORS.WHITE,
+    suffixColor: COLORS.GREEN_500
   },
   3: {
-    bgColor: COLORS.NEW.GRAY_50,
-    textColor: COLORS.NEW.DARK_900,
-    suffixColor: COLORS.NEW.GREEN_500
+    bgColor: COLORS.GRAY_50,
+    textColor: COLORS.DARK_900,
+    suffixColor: COLORS.GREEN_500
   },
   4: {
-    bgColor: COLORS.NEW.DARK_900,
-    textColor: COLORS.NEW.WHITE,
-    suffixColor: COLORS.NEW.GREEN_500
+    bgColor: COLORS.DARK_900,
+    textColor: COLORS.WHITE,
+    suffixColor: COLORS.GREEN_500
   }
 };
 

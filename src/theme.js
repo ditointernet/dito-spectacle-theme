@@ -24,12 +24,12 @@ const screen = () => {
       }
     ],
     fullscreen: {
-      fill: COLORS.NEW.DARK_700
+      fill: COLORS.DARK_700
     },
     global: {
       body: {
-        color: COLORS.NEW.DARK_900,
-        background: COLORS.NEW.WHITE,
+        color: COLORS.DARK_900,
+        background: COLORS.WHITE,
         fontFamily: fonts.primary,
         fontWeight: 600,
         fontSize: "62.5%",
@@ -87,7 +87,7 @@ const screen = () => {
         h6: { ...headingDefaults, fontSize: "1.6rem" }
       },
       text: {
-        color: COLORS.NEW.DARK_900,
+        color: COLORS.DARK_900,
         fontSize: "2.0rem",
         fontFamily: fonts.primary,
         margin: 0

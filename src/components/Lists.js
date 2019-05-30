@@ -8,7 +8,7 @@ export const Item = styled.li`
   margin-bottom: 1rem;
 
   &:before {
-    color: ${COLORS.NEW.GREEN_500};
+    color: ${COLORS.GREEN_500};
     font-weight: 700;
     position: absolute;
     margin-left: -1.5rem;

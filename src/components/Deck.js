@@ -1,5 +1,5 @@
 import React from "react";
-import theme from "./theme";
+import theme from "../theme";
 import { Deck as SpectacleDeck } from "spectacle";
 
 const Deck = ({ progress, ...props }) => (

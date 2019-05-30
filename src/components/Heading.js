@@ -8,7 +8,7 @@ const Heading = styled(SpectacleHeading)`
 
   &:after {
     font-weight: 700;
-    color: ${props => props.suffixColor || COLORS.NEW.GREEN_500};
+    color: ${props => props.suffixColor || COLORS.GREEN_500};
     content: '${props => props.suffix || ""}';
   }
 

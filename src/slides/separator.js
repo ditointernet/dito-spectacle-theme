@@ -9,15 +9,15 @@ const Separator = ({ number, text, ...props }) => {
     <SpectacleSlide
       {...props}
       textSize="5rem"
-      textColor={COLORS.NEW.WHITE}
-      bgColor={COLORS.NEW.GREEN_500}
+      textColor={COLORS.WHITE}
+      bgColor={COLORS.GREEN_500}
       align="flex-start center"
     >
       <Layout style={{ alignItems: "center" }}>
         <Heading
           textSize="14rem"
           fontWeight={700}
-          textColor={COLORS.NEW.GREEN_600}
+          textColor={COLORS.GREEN_600}
           margin="0 2rem 0 0"
         >
           {number}

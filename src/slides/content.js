@@ -16,8 +16,8 @@ const Content = ({
     <SpectacleSlide
       {...props}
       textSize="1.6rem"
-      textColor={COLORS.NEW.DARK_900}
-      bgColor={COLORS.NEW.WHITE}
+      textColor={COLORS.DARK_900}
+      bgColor={COLORS.WHITE}
       align="flex-start flex-start"
       padding="0 0 0 10vw"
     >
@@ -25,7 +25,7 @@ const Content = ({
         className="slide-content-breadcrumb"
         style={{ position: "absolute", top: "10vh" }}
       >
-        <Heading caps size={6} fontWeight={500} textColor={COLORS.NEW.DARK_900}>
+        <Heading caps size={6} fontWeight={500} textColor={COLORS.DARK_900}>
           {breadcrumb}
         </Heading>
         <Bar width="3.6vw" height="0.6vh" margin="2vh 0 0" />
@@ -35,8 +35,8 @@ const Content = ({
           <Heading
             size={5}
             suffix={slideTitleSuffix}
-            textColor={COLORS.NEW.DARK_900}
-            suffixColor={COLORS.NEW.GREEN_500}
+            textColor={COLORS.DARK_900}
+            suffixColor={COLORS.GREEN_500}
           >
             {slideTitle}
           </Heading>
