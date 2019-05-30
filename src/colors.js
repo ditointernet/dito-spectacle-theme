@@ -1,101 +1,105 @@
+const COLORS = {};
+
 // BLACK
-export const BLACK = "#000000";
+COLORS.BLACK = "#000000";
 
 // WHITE
-export const WHITE = "#FFFFFF";
+COLORS.WHITE = "#FFFFFF";
 
 // DARK
-export const DARK_50 = "#E6E8ED";
-export const DARK_100 = "#BFC6D4";
-export const DARK_200 = "#97A2B6";
-export const DARK_300 = "#707E99";
-export const DARK_400 = "#536485";
-export const DARK_500 = "#364B74";
-export const DARK_600 = "#30446C";
-export const DARK_700 = "#283B61";
-export const DARK_800 = "#223154";
-export const DARK_900 = "#19223C";
+COLORS.DARK_50 = "#E6E8ED";
+COLORS.DARK_100 = "#BFC6D4";
+COLORS.DARK_200 = "#97A2B6";
+COLORS.DARK_300 = "#707E99";
+COLORS.DARK_400 = "#536485";
+COLORS.DARK_500 = "#364B74";
+COLORS.DARK_600 = "#30446C";
+COLORS.DARK_700 = "#283B61";
+COLORS.DARK_800 = "#223154";
+COLORS.DARK_900 = "#19223C";
 
 // NAVY
-export const NAVY_50 = "#E8EAF2";
-export const NAVY_100 = "#C6CAE0";
-export const NAVY_200 = "#A1A8CB";
-export const NAVY_300 = "#7E86B5";
-export const NAVY_400 = "#646CA6";
-export const NAVY_500 = "#4B5398";
-export const NAVY_600 = "#454B8F";
-export const NAVY_700 = "#3C4183";
-export const NAVY_800 = "#353877";
-export const NAVY_900 = "#29275F";
+COLORS.NAVY_50 = "#E8EAF2";
+COLORS.NAVY_100 = "#C6CAE0";
+COLORS.NAVY_200 = "#A1A8CB";
+COLORS.NAVY_300 = "#7E86B5";
+COLORS.NAVY_400 = "#646CA6";
+COLORS.NAVY_500 = "#4B5398";
+COLORS.NAVY_600 = "#454B8F";
+COLORS.NAVY_700 = "#3C4183";
+COLORS.NAVY_800 = "#353877";
+COLORS.NAVY_900 = "#29275F";
 
 // GRAY
-export const GRAY_50 = "#EFF0F2";
-export const GRAY_100 = "#D7DAE0";
-export const GRAY_200 = "#BDC2CC";
-export const GRAY_300 = "#A2A9B8";
-export const GRAY_400 = "#8D95A7";
-export const GRAY_500 = "#798398";
-export const GRAY_600 = "#6A7486";
-export const GRAY_700 = "#59606F";
-export const GRAY_800 = "#484D59";
-export const GRAY_900 = "#343841";
+COLORS.GRAY_50 = "#EFF0F2";
+COLORS.GRAY_100 = "#D7DAE0";
+COLORS.GRAY_200 = "#BDC2CC";
+COLORS.GRAY_300 = "#A2A9B8";
+COLORS.GRAY_400 = "#8D95A7";
+COLORS.GRAY_500 = "#798398";
+COLORS.GRAY_600 = "#6A7486";
+COLORS.GRAY_700 = "#59606F";
+COLORS.GRAY_800 = "#484D59";
+COLORS.GRAY_900 = "#343841";
 
 // GREEN
-export const GREEN_50 = "#E5F7ED";
-export const GREEN_100 = "#C0EBD2";
-export const GREEN_200 = "#97DFB5";
-export const GREEN_300 = "#66D297";
-export const GREEN_400 = "#39C881";
-export const GREEN_500 = "#00BD6A";
-export const GREEN_600 = "#00AE5F";
-export const GREEN_700 = "#009B52";
-export const GREEN_800 = "#008A46";
-export const GREEN_900 = "#006A31";
+COLORS.GREEN_50 = "#E5F7ED";
+COLORS.GREEN_100 = "#C0EBD2";
+COLORS.GREEN_200 = "#97DFB5";
+COLORS.GREEN_300 = "#66D297";
+COLORS.GREEN_400 = "#39C881";
+COLORS.GREEN_500 = "#00BD6A";
+COLORS.GREEN_600 = "#00AE5F";
+COLORS.GREEN_700 = "#009B52";
+COLORS.GREEN_800 = "#008A46";
+COLORS.GREEN_900 = "#006A31";
 
 // RED
-export const RED_50 = "#F9E8E7";
-export const RED_100 = "#FAC9BC";
-export const RED_200 = "#F8A792";
-export const RED_300 = "#F58467";
-export const RED_400 = "#F46A47";
-export const RED_500 = "#F34F29";
-export const RED_600 = "#E84A26";
-export const RED_700 = "#DA4321";
-export const RED_800 = "#CC3D1D";
-export const RED_900 = "#B33015";
+COLORS.RED_50 = "#F9E8E7";
+COLORS.RED_100 = "#FAC9BC";
+COLORS.RED_200 = "#F8A792";
+COLORS.RED_300 = "#F58467";
+COLORS.RED_400 = "#F46A47";
+COLORS.RED_500 = "#F34F29";
+COLORS.RED_600 = "#E84A26";
+COLORS.RED_700 = "#DA4321";
+COLORS.RED_800 = "#CC3D1D";
+COLORS.RED_900 = "#B33015";
 
 // BLUE
-export const BLUE_50 = "#E4F1FF";
-export const BLUE_100 = "#BFDCFF";
-export const BLUE_200 = "#96C6FF";
-export const BLUE_300 = "#6CB0FF";
-export const BLUE_400 = "#549EFF";
-export const BLUE_500 = "#488DFF";
-export const BLUE_600 = "#4B7EFE";
-export const BLUE_700 = "#4B6BE9";
-export const BLUE_800 = "#4A58D5";
-export const BLUE_900 = "#4734B5";
+COLORS.BLUE_50 = "#E4F1FF";
+COLORS.BLUE_100 = "#BFDCFF";
+COLORS.BLUE_200 = "#96C6FF";
+COLORS.BLUE_300 = "#6CB0FF";
+COLORS.BLUE_400 = "#549EFF";
+COLORS.BLUE_500 = "#488DFF";
+COLORS.BLUE_600 = "#4B7EFE";
+COLORS.BLUE_700 = "#4B6BE9";
+COLORS.BLUE_800 = "#4A58D5";
+COLORS.BLUE_900 = "#4734B5";
 
 // PURPLE
-export const PURPLE_50 = "#F0E4F3";
-export const PURPLE_100 = "#D9BCE3";
-export const PURPLE_200 = "#C091D2";
-export const PURPLE_300 = "#A867BF";
-export const PURPLE_400 = "#9649B1";
-export const PURPLE_500 = "#852CA5";
-export const PURPLE_600 = "#77299F";
-export const PURPLE_700 = "#652496";
-export const PURPLE_800 = "#541F8E";
-export const PURPLE_900 = "#34177F";
+COLORS.PURPLE_50 = "#F0E4F3";
+COLORS.PURPLE_100 = "#D9BCE3";
+COLORS.PURPLE_200 = "#C091D2";
+COLORS.PURPLE_300 = "#A867BF";
+COLORS.PURPLE_400 = "#9649B1";
+COLORS.PURPLE_500 = "#852CA5";
+COLORS.PURPLE_600 = "#77299F";
+COLORS.PURPLE_700 = "#652496";
+COLORS.PURPLE_800 = "#541F8E";
+COLORS.PURPLE_900 = "#34177F";
 
 // ORANGE
-export const ORANGE_50 = "#FFF8E1";
-export const ORANGE_100 = "#FFEDB3";
-export const ORANGE_200 = "#FFE182";
-export const ORANGE_300 = "#FFD74F";
-export const ORANGE_400 = "#FFCC26";
-export const ORANGE_500 = "#FFC400";
-export const ORANGE_600 = "#FFB500";
-export const ORANGE_700 = "#FFA200";
-export const ORANGE_800 = "#FF9100";
-export const ORANGE_900 = "#FF7100";
+COLORS.ORANGE_50 = "#FFF8E1";
+COLORS.ORANGE_100 = "#FFEDB3";
+COLORS.ORANGE_200 = "#FFE182";
+COLORS.ORANGE_300 = "#FFD74F";
+COLORS.ORANGE_400 = "#FFCC26";
+COLORS.ORANGE_500 = "#FFC400";
+COLORS.ORANGE_600 = "#FFB500";
+COLORS.ORANGE_700 = "#FFA200";
+COLORS.ORANGE_800 = "#FF9100";
+COLORS.ORANGE_900 = "#FF7100";
+
+export default COLORS;
