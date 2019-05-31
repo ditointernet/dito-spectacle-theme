@@ -19,7 +19,6 @@ const Content = ({
       textColor={COLORS.DARK_900}
       bgColor={COLORS.WHITE}
       align="flex-start flex-start"
-      padding="0 0 0 10vw"
     >
       <div
         className="slide-content-breadcrumb"
