@@ -10,7 +10,7 @@ const Deck = ({ progress, ...props }) => (
     controls={false}
     theme={{ screen: theme(), print: theme() }}
     transitionDuration={200}
-    contentWidth="1200px"
+    contentWidth={1200}
   />
 );
 
