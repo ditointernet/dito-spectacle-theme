@@ -1,11 +1,27 @@
 import styled from "styled-components";
+import React from "react";
 
 import COLORS from "../colors";
+
+import Heading from "./Heading";
+
+export const ItemDesc = props => (
+  <Heading
+    {...props}
+    textSize="1.4rem"
+    fontWeight={600}
+    textColor={COLORS.GRAY_600}
+  />
+);
 
 export const Item = styled.li`
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 
   &:before {
     color: ${COLORS.GREEN_500};
@@ -20,9 +36,11 @@ export const Unordered = styled.ul`
   margin: 0;
 
   ${Item} {
+    font-size: ${props => props.textSize || "1.2rem"};
+
     &::before {
       content: "\\2022";
-      font-size: 2rem;
+      font-size: ${props => props.bulletSize || "2rem"};
       margin-top: -0.5rem;
     }
   }
@@ -36,6 +54,7 @@ export const Ordered = styled.ol`
 
   ${Item} {
     counter-increment: dito-ol-counter;
+    font-size: ${props => props.textSize || "2rem"};
 
     &::before {
       content: counter(dito-ol-counter) ". ";

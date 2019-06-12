@@ -4,7 +4,7 @@ import { Deck as SpectacleDeck } from "spectacle";
 
 const Deck = ({ progress, ...props }) => (
   <SpectacleDeck
-    showFullscreenControl={true}
+    showFullscreenControl={false}
     {...props}
     progress={progress ? "bar" : "none"}
     controls={false}
